@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head data-room="<%=room%>">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Room</title>
+</head>
+<body>
+    <% console.log("To join", room); %>
+    <form method="post" action="/join_&<%= room %>">
+        <input type="text" name="student_name" id="student_name">
+        <input type="text" name="student_number" id="student_number">
+        <input type="submit" value="Join">
+    </form>
+</body>
+</html>

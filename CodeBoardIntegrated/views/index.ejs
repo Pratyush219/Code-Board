@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+</head>
+
+<body>
+    <form action=""></form>
+    <form class="Join-or-Create-Class" method="post" action="/create-util">
+        <label for="room-name">Enter Room ID:</label><br>
+        <input type="text" name="room_name" id="room-name">
+        <button type="submit" name="CREATE">CREATE</button>
+    </form>
+    <p>Join Room: </p>
+    <ul>
+        <% Object.keys(rooms).forEach( room=>{ %>
+            <li>
+                <%=room%>
+                    <form method="post" action="/join_util&<%=room%>"><button>Join</button></form>
+            </li>
+            <% }) %>
+    </ul>
+</body>
+
+</html>

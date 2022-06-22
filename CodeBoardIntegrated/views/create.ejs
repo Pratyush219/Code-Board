@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Form</title>
+</head>
+
+<body>
+    <input type="number" placeholder="Number of students" id="numberCount" name="studentCount">
+    <button onclick="getValue()">Continue</button>
+
+    <div id="createForm"></div>
+    <!-- <form method="post" action="/create-room" id="create-room-form">
+
+        <input type="button" value="Continue" onclick="getValue()">
+    </form> -->
+    <script>
+        let count;
+        function getValue() {
+            //let teacherName = document.getElementById('teacher_name').value;
+            //console.log("Teacher Name: " + teacherName);
+            // document.getElementById('teacher_nane').value = teacherName;
+            //let teacherNumber = document.getElementById('teacher_contact').value;
+            // document.getElementById('teacher_contact').value
+            //const count = document.getElementById("numberCount").value;
+            //console.log("create-form", teacherName, teacherNumber, count);
+
+            console.log("Inside getValue()");
+            count = document.getElementById("numberCount").value;
+            console.log(count);
+            const division = document.getElementById("createForm");
+            division.innerHTML += `<form method="post" action="/create-room" id="create-room-form"> 
+            <legend>Teacher</legend>
+                <input type="text" name="teacher_name" id="teacher_name" placeholder="Name">
+                <input type="text" name="teacher_contact" id="teacher_contact" placeholder="Phone number">`
+            const form = document.getElementById("create-room-form");
+            for (let i = 1; i <= count; ++i) {
+                form.innerHTML += `<input type="text" placeholder="Name" name="names">`
+                form.innerHTML += `<input type="number" placeholder="Phone number" name="contact">`
+                // division.innerHTML += `<input type="number" placeholder="Number of students" id="numberCount" name="studentCount" disabled value=${count}>`
+                form.innerHTML += `<br> <br>`
+
+                // const form = document.getElementById("create-room-form");
+                // form.appendChild(division);
+                //form.innerHTML += '<input type="text" placeholder="Room ID" name="room_name" id="room-name">&nbsp;&nbsp;&nbsp;&nbsp;'
+                //form.innerHTML += 
+                //form.innerHTML += '<input type="submit" value="Create">';
+                // document.getElementById('teacher_nane').value = teacherName;
+                // document.getElementById('teacher_contact').value = teacherNumber;
+                // document.getElementById("numberCount").value = count;
+            }
+            form.innerHTML += '<input type="text" name="room_name" id="room-name">&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Create"></form>';
+        }
+
+
+    </script>
+
+</body>
+
+</html>

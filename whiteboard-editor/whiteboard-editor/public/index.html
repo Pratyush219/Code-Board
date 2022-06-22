@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiteboard</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div id="view-selection">
+        <div class="selection" id="canvas-selector">Whiteboard</div>
+        <div class="selection" id="ide-selector">Editor</div>
+    </div>
+    <div id="canvas-container">
+        <div id="tools-section">
+            <button class="tool" id="draw">Draw</button>
+            <button class="tool" id="erase">Erase</button>
+            Brush Color :&nbsp;
+            <input type="color" class="tool" id="line-color">
+            <button class="tool" value="Clear Screen" id="clear-canvas">Clear screen </button>
+            Brush Size :&nbsp;
+            <select class="tool" id="brush-size">
+                <option value="1">1</option>
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+        <div>
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+    <div id="ide-container">
+        <div class="header">Online IDE</div>
+        <div class="control-panel">
+            Select Language
+        
+            <select name="" id="languages" class="languages" onchange="changeLanguage()">
+                <option id="c" value="c">C</option>
+                <option id="cpp" value="cpp">C++</option>
+                <option id="python" value="python">Python</option>
+                <!-- <option value="java">Java</option> -->
+            </select>
+        </div>
+        <div class="editor" id="editor"></div>
+        <div class="button-container">
+            <button class="btn" onclick="executeCode()">RUN</button>
+        </div>
+        <div>
+            <h3>Input</h3>
+            <textarea name="input" cols="203" rows="5" class="input"></textarea>
+        
+        </div>
+        <br>
+        <h3>Output</h3>
+        <div class="output"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
+    <script src="./lib/ace.js"></script>
+    <script src="./lib/theme-monokai.js"></script>
+    <script src="./script.js"></script>
+    <script src="./ide.js"></script>
+</body>
+
+</html>
